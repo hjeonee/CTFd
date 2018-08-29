@@ -66,16 +66,16 @@
 
 					{% if not get_config('workshop_mode') %}
 						<li class="nav-item">
-							<a class="nav-link" href="{{ request.script_root }}/teams">Teams</a>
+							<a class="nav-link" href="{{ request.script_root }}/teams">참가 팀</a>
 						</li>
 					{% endif %}
 					{% if not hide_scores() %}
 						<li class="nav-item">
-							<a class="nav-link" href="{{ request.script_root }}/scoreboard">Scoreboard</a>
+							<a class="nav-link" href="{{ request.script_root }}/scoreboard">스코어보드</a>
 						</li>
 					{% endif %}
 					<li class="nav-item">
-						<a class="nav-link" href="{{ request.script_root }}/challenges">Challenges</a>
+						<a class="nav-link" href="{{ request.script_root }}/challenges">미궁 게임!</a>
 					</li>
 				</ul>
 
@@ -85,29 +85,29 @@
 					{% if username is defined %}
 						{% if admin %}
 							<li class="nav-item">
-								<a class="nav-link" href="{{ request.script_root }}/admin">Admin</a>
+								<a class="nav-link" href="{{ request.script_root }}/admin">관리자</a>
 							</li>
 						{% endif %}
 						<li class="nav-item">
-							<a class="nav-link" href="{{ request.script_root }}/team">Team</a>
+							<a class="nav-link" href="{{ request.script_root }}/team">참가 팀</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ request.script_root }}/profile">Profile</a>
+							<a class="nav-link" href="{{ request.script_root }}/profile">프로파일</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ request.script_root }}/logout">Logout</a>
+							<a class="nav-link" href="{{ request.script_root }}/logout">로그아웃</a>
 						</li>
 					{% else %}
 						{% if can_register() %}
 							<li class="nav-item">
-								<a class="nav-link" href="{{ request.script_root }}/register">Register</a>
+								<a class="nav-link" href="{{ request.script_root }}/register">등록</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link d-none d-md-block d-lg-block">|</a>
 							</li>
 						{% endif %}
 						<li class="nav-item">
-							<a class="nav-link" href="{{ request.script_root }}/login">Login</a>
+							<a class="nav-link" href="{{ request.script_root }}/login">로그인</a>
 						</li>
 					{% endif %}
 				</ul>
@@ -122,8 +122,8 @@
 
 	<footer class="footer">
 		<div class="container text-center">
-			<a href="https://ctfd.io">
-				<small class="text-muted">Powered by CTFd</small>
+			<a href="http://ts.hs.kr">
+				<small class="text-muted">DSHS 2018 CODEJAM</small>
 			</a>
 		</div>
 	</footer>

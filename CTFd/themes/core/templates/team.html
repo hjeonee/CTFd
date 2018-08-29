@@ -20,19 +20,19 @@
 
 	{% if score_frozen %}
 	<div class="row">
-		<h1 class="text-center">Scoreboard has been frozen.</h1>
+		<h1 class="text-center">스코어보드가 프리즈되었습니다!</h1>
 	</div>
 	{% endif %}
 
 	<div class="team-info">
 		<h2 id="team-place" class="text-center">
 			{%if not get_config('workshop_mode') and place %}
-				{{ place }} <small>place</small>
+				{{ place }} <small>등</small>
 			{% endif %}
 		</h2>
 		<h2 id="team-score" class="text-center">
 			{%if score %}
-				{{ score }} <small>points</small>
+				{{ score }} <small>점</small>
 			{% endif %}
 		</h2>
 	</div>
@@ -83,10 +83,10 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<td><b>Challenge</b></td>
-						<td class="d-none d-md-block d-lg-block"><b>Category</b></td>
-						<td><b>Value</b></td>
-						<td><b>Time</b></td>
+						<td><b>미궁게임</b></td>
+						<td class="d-none d-md-block d-lg-block"><b>카테고리</b></td>
+						<td><b>점수</b></td>
+						<td><b>시간</b></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -102,7 +102,7 @@
 		</div>
 	</div>
 	{% else %}
-		<div class="text-center"><h3 class="spinner-error">No solves yet</h3></div>
+		<div class="text-center"><h3 class="spinner-error">아직 아무도 푼 팀이 없습니다!</h3></div>
 	{% endif %}
 	{% endif %}
 </div>
