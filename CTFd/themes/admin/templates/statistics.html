@@ -3,21 +3,21 @@
 {% block content %}
 <div class="jumbotron">
 	<div class="container">
-		<h1>Statistics</h1>
+		<h1>통계</h1>
 	</div>
 </div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-4 text-right">
-			<h5><b>{{ team_count }}</b> teams registered</h5>
+			<h5><b>{{ team_count }}</b> 개의 팀</h5>
 			<h5><b>{{ ip_count }}</b> IP addresses</h5>
 			<hr>
-			<h5><b>{{ challenge_count }}</b> challenges</h5>
+			<h5><b>{{ challenge_count }}</b> 개의 문제</h5>
 			{% if most_solved %}
-				<h5><b>{{ most_solved }}</b> has the most solves with <br>{{ solve_data[most_solved] }} solves</h5>
+				<h5><b>{{ most_solved }}</b>가 가장 많이 맞춤 맞은 개수 : <br>{{ solve_data[most_solved] }} solves</h5>
 			{% endif %}
 			{% if least_solved %}
-			<h5><b>{{ least_solved }}</b> has the least solves with <br>{{ solve_data[least_solved] }} solves</h5>
+			<h5><b>{{ least_solved }}</b>가 가장 저게 맞춤 맞은 개수 : <br>{{ solve_data[least_solved] }} solves</h5>
 			{% endif %}
 		</div>
 
@@ -52,8 +52,8 @@
 				</div>
 			</div>
 			<div class="text-center">
-				<h5><b>{{ solve_count }}</b> right submissions</h5>
-				<h5><b>{{ wrong_count }}</b> wrong submissions</h5>
+				<h5>정답: <b>{{ solve_count }}</b> </h5>
+				<h5>오답: <b>{{ wrong_count }}</b></h5>
 			</div>
 		</div>
 		<div class="col-md-6">

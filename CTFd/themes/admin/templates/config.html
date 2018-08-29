@@ -3,7 +3,7 @@
 {% block content %}
 <div class="jumbotron">
 	<div class="container">
-		<h1>Configuration</h1>
+		<h1>시스템 설정</h1>
 	</div>
 </div>
 <div class="container">
@@ -42,13 +42,13 @@
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="appearance-section">
 					<div class="form-group">
-						<label for="ctf_name">CTF Name:</label>
+						<label for="ctf_name">대회 이름:</label>
 						<input class="form-control" id='ctf_name' name='ctf_name' type='text' placeholder="CTF Name"
 							   {% if ctf_name is defined and ctf_name != None %}value="{{ ctf_name }}"{% endif %}>
 					</div>
 
 					<div class="form-group">
-						<label for="ctf_logo">CTF Logo:</label>
+						<label for="ctf_logo">대회 로고o:</label>
 
 						{% if ctf_logo %}
 						<div class="d-block py-3">
@@ -61,7 +61,7 @@
 								$('#ctf_logo_preview').css('visibility', 'hidden');
 								$(this).text('Logo will be removed on next update');
 							">
-								Remove Logo
+								로고 삭제
 							</button>
 						</div>
 						{% endif %}
@@ -72,7 +72,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="ctf_theme">Theme:</label>
+						<label for="ctf_theme">테마:</label>
 						<select class="form-control" id="ctf_theme" name="ctf_theme">
 							<option>{{ ctf_theme_config }}</option>
 							{% for theme in themes %}
@@ -85,7 +85,7 @@
 						<label>
 							<input id="workshop_mode" name="workshop_mode" type="checkbox"
 								   {% if workshop_mode %}checked{% endif %}>
-							Workshop Mode <i class="far fa-question-circle text-muted cursor-help" data-toggle="tooltip"
+							Workshop 모드 <i class="far fa-question-circle text-muted cursor-help" data-toggle="tooltip"
 											 data-placement="right"
 											 title="Hide all public team and score information."></i>
 						</label>
@@ -95,7 +95,7 @@
 						<label>
 							<input id="paused" name="paused" type="checkbox"
 								   {% if paused %}checked{% endif %}>
-							Pause CTF <i class="far fa-question-circle text-muted cursor-help" data-toggle="tooltip"
+							대회 일시정지 <i class="far fa-question-circle text-muted cursor-help" data-toggle="tooltip"
 										 data-placement="right"
 										 title="Prevent users from submitting answers until unpaused. Challenges can still be viewed."></i>
 						</label>
@@ -104,7 +104,7 @@
 					<div class="form-check">
 						<label>
 							<input id="hide_scores" name="hide_scores" type="checkbox" {% if hide_scores %}checked{% endif %}>
-							Hide Scores from public view
+							일반 사용자에게 점수 가리기
 						</label>
 					</div>
 
@@ -117,14 +117,14 @@
 					<div class="form-check">
 						<label>
 							<input id="verify_emails" name="verify_emails" type="checkbox" {% if verify_emails %}checked{% endif %}>
-							Only allow users with verified emails
+							메일이 인증된 사용자만 참가 허용
 						</label>
 					</div>
 
 					<div class="form-check">
 						<label>
 							<input id="view_challenges_unregistered" name="view_challenges_unregistered" type="checkbox" {% if view_challenges_unregistered %}checked{% endif %}>
-							Unregistered users can view challenges
+							로그인하지 않는 사용자도 스코어보드를 볼 수 있게 허용
 						</label>
 					</div>
 
@@ -132,21 +132,21 @@
 						<label>
 							<input id="view_scoreboard_if_authed" name="view_scoreboard_if_authed" type="checkbox"
 								   {% if view_scoreboard_if_authed %}checked{% endif %}>
-							Scoreboard can only be viewed by logged in users
+							로그인만 사용자만 스코어보드를 볼 수 있게 허용
 						</label>
 					</div>
 
 					<div class="form-check">
 						<label>
 							<input id="prevent_registration" name="prevent_registration" type="checkbox" {% if prevent_registration %}checked{% endif %}>
-							Prevent public registration
+							등록 차단
 						</label>
 					</div>
 
 					<div class="form-check">
 						<label>
 							<input id="prevent_name_change" name="prevent_name_change" type="checkbox" {% if prevent_name_change %}checked{% endif %}>
-							Prevent team name changes
+							팀 이름 변경 차단
 						</label>
 					</div>
 				</div>
