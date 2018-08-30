@@ -48,7 +48,7 @@ def hints_view(hintid):
                 # It's ctftime or the CTF has ended (but we allow views after)
                 team = Teams.query.filter_by(id=session['id']).first()
                 if team.score() < hint.cost:
-                    return jsonify({'errors': 'Not enough points'})
+                    return jsonify({'errors': '현재 보유하고 있는 포인트가 부족합니다.'})
                 unlock = Unlocks(model='hints', teamid=session['id'], itemid=hint.id)
                 award = Awards(teamid=session['id'], name=text_type('Hint for {}'.format(chal.name)), value=(-hint.cost))
                 db.session.add(unlock)
@@ -388,7 +388,7 @@ def chal(chalid):
             if max_tries and fails >= max_tries > 0:
                 return jsonify({
                     'status': 0,
-                    'message': "You have 0 tries remaining"
+                    'message': "더 이상 시도할 수 없습니다."
                 })
 
             status, message = chal_class.attempt(chal, request)
@@ -417,9 +417,9 @@ def chal(chalid):
         else:
             logger.info("{0} submitted {1} with kpm {2} [ALREADY SOLVED]".format(*data))
             # return '2' # challenge was already solved
-            return jsonify({'status': 2, 'message': 'You already solved this'})
+            return jsonify({'status': 2, 'message': '이미 푼 문제입니다.'})
     else:
         return jsonify({
             'status': -1,
-            'message': "You must be logged in to solve a challenge"
+            'message': "문제를 풀기 위해서는 로그인을 해야 합니다!"
         })
