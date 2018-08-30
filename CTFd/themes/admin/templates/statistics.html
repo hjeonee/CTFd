@@ -14,10 +14,10 @@
 			<hr>
 			<h5><b>{{ challenge_count }}</b> 개의 문제</h5>
 			{% if most_solved %}
-				<h5><b>{{ most_solved }}</b>가 가장 많이 맞춤 맞은 개수 : <br>{{ solve_data[most_solved] }} solves</h5>
+				<h5><b>{{ most_solved }}</b>를 <br>{{ solve_data[most_solved] }}개로 가장 많이 맞춤</h5>
 			{% endif %}
 			{% if least_solved %}
-			<h5><b>{{ least_solved }}</b>가 가장 저게 맞춤 맞은 개수 : <br>{{ solve_data[least_solved] }} solves</h5>
+			<h5><b>{{ least_solved }}</b>를 <br>{{ solve_data[least_solved] }}개로 가장 적게 맞춤</h5>
 			{% endif %}
 		</div>
 

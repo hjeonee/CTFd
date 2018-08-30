@@ -308,8 +308,8 @@ function loadhint(hintid){
         html: true,
     });
     ezq({
-        title: "Unlock Hint?",
-        body: "Are you sure you want to open this hint?",
+        title: "힌트를 사용하시겠어요?",
+        body: "정말 힌트를 사용하시겠어요?",
         success: function(){
             $.post(script_root + "/hints/" + hintid, {'nonce': $('#nonce').val()}, function (data) {
                 if (data.errors) {
